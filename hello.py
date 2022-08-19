@@ -3,7 +3,13 @@ age = '18'
 email = 'dakshuklal+vs@gmail.com'
 mobile = '8287086661'
 school = 'BBPSGRH'
-exe = (name,age,email,school,mobile)
+exe = f'''
+name = {name}
+age = {age}
+email = {email}
+school = {school}
+mobile = {mobile}
+'''
 print(exe)
 
                                                     #OR
