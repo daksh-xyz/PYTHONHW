@@ -12,10 +12,7 @@ intNum = {intNum}
 floatNum = {floatNum}
 complexNum = {complexNum}
 '''
-print(floatNum, ' => ', int(floatNum))
-print(intNum, '=>', float(intNum))
-print(intNum, '=>', complex(intNum))
-print(floatNum, '=>', complex(floatNum))
+print(numValues)
 
 
 
