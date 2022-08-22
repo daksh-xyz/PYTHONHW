@@ -1,4 +1,4 @@
-from array import array
+from ctypes import addressof
 
 
 intNum = 73
@@ -68,3 +68,16 @@ print('\n 0 to 4th char of variable(name): ', Name[0:5], '\n') #x:y, : adds rang
 print('\n 0 to 4th char of variable (name):', name[:5], '\n')  #if we dont put anything in 'x' it meas from start and if 'y' is empty it means for the length of the string  
 #NEGATIVE SLICING
 print('\n negative slicing:', Name[-3:-1], '\n')
+
+#21-Aug-22
+name = 'Daksh'
+age = 18
+address = 'New Delhi'
+course = 'Python'
+school = 'BBPSGR'
+
+message = 'Hello Mr. ' + name + ', how are you?' + f''', {age}''' + ' ' + course
+print(message)
+
+Bio_data = '''\nHello, my name is {x}\nI am {y} years old\nI currently live in {a}\nI am learning {c}\nI study in {s}'''.format(x=name,y=18,a=address,c=course,s=school)
+print(Bio_data)
