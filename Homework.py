@@ -1,4 +1,7 @@
+from audioop import reverse
 from ctypes import addressof
+from re import X
+from typing import Reversible
 
 
 intNum = 73
@@ -81,3 +84,33 @@ print(message)
 
 Bio_data = '''\nHello, my name is {x}\nI am {y} years old\nI currently live in {a}\nI am learning {c}\nI study in {s}'''.format(x=name,y=18,a=address,c=course,s=school)
 print(Bio_data)
+
+#tuple => 2 methods only
+x = (1,2,3,4,5)
+#list => 11 methods
+y = ['a','b','c','d','e']
+z = [10,11,52,73] #for extend func
+z1 = [21,37,65,45] # for funcs ahead of clear
+print(x.count(2))     #tells how many times a value has been repeated
+print(x.index(4))     #prints out index number of the given int/string
+print(y.index('b'))   #same
+print(y.count('c'))   #same as x.count
+y.append("5")
+print(y)              #need to pritn seperately :'(
+y.clear()
+print(y)
+z1.extend(z)
+print(z1)
+g = z1.copy()
+print(g)
+z1.insert(3,55)
+print(z1)
+z.pop(2)
+print(z)  #removes 52 can't print in one line prints the removed element
+z.remove(10)   
+print(z)
+z.reverse()  #reverses the list order
+print(z)
+z1.sort()   #arranges in asc or desc order
+#z1.reverse()       makes the above sort intp descending, sorted in ascending order of alpha if there are alphas, if int then inc number wisse
+print(z1)
