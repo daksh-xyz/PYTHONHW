@@ -8,12 +8,12 @@ y = [{
         },
     },
 },
-    {'\n''proInfo':{
+    {'proInfo':{
         'school': 'BBPSGR',
         'college': 'MUJ',
     }},
-    {'\n''aboutUs': {'We\'re learning a programming laguage called Python and it\'s really fun except for all the errors :)'}},
-    {'\n''Hobbies': {
+    {'aboutUs': {'We\'re learning a programming laguage called Python and it\'s really fun except for all the errors :)'}},
+    {'Hobbies': {
         'Indoor': ['Reading', 'Coding','Cooking','Binge-watching TV series'],
         'Outdoor': ['Gym', 'Badminton','Shopping']
     }
