@@ -1,8 +1,8 @@
 a = {1,1,1,1,1,3,2,4,5,6}
 b = {10,11,12,13}
 # a.discard(1)
-# print('originally a is this:', a)
-#difference between discard remove and pop 
+# print(a)  prints 'a' without 1
+#                                           difference between discard remove and pop 
 # remove gives an error if the element does not exist in the given set whereas discard doesn't do anything
 #pop removes a random argument from the given set
 c = {'num': 1, 'num2':2, 'num3':3}
