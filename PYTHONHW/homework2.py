@@ -43,3 +43,4 @@ if rem == 1:
     print('entered number is odd')
 elif rem == 0:
     print('entered number is even')
+    #hi
