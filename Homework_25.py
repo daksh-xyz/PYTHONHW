@@ -5,8 +5,7 @@ b = {10,11,12,13}
 #                                           difference between discard remove and pop 
 # remove gives an error if the element does not exist in the given set whereas discard doesn't do anything
 #pop removes a random argument from the given set
-c = {'num': 1, 'num2':2, 'num3':3}
-# c.pop()
+#                                    difference between POP REMOVE AND POPITEM in list/set and dict
 #       POP
 # in lists pop removes the last element or elt at specified index
 # in set pop removes a random argument
