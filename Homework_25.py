@@ -38,7 +38,7 @@ print(s)
 #if we don't use int class then we can use this but without int we can't add these two inputs
 #x = input('\nEnter number: ')
 x = input('enter a number: ')
-rem = float(x) % 2
+rem = int(x) % 2
 if rem == 1:
     print('entered number is odd')
 elif rem == 0:
