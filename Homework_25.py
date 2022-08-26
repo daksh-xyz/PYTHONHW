@@ -26,7 +26,7 @@
 
 # Q2 addition
 
-num_1 = float(input('\nEnter first number: '))
+num_1 = float(input('\nEnter first number: '))                          #float is used to cast input to float
 num_2 = float(input('\nEnter second number: '))
 s = (num_1) + (num_2)
 print(s)
@@ -43,7 +43,7 @@ print(s)
 
 # Q3 odd/even
 x = input('enter a number: ')
-rem = int(x) % 2
+rem = int(x) % 2                        #int is used to cast x string to integer
 if rem == 1:
     print('entered number is odd')
 elif rem == 0:
