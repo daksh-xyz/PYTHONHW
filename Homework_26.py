@@ -1,5 +1,5 @@
 user_input = input('Enter a value: ')
-print(user_input.__len__())
+print('length of given input: ', user_input.__len__())
 if user_input.strip().isdigit() == True:          #strip method removes a char from starting and ending, in our case it is removing '' which makes input a string 
     print('input number is an integer')   #is.digit tells if it is an integer in bool
     exit()                    # we use exit() because if it has identified the type of input we don't need it to identify it further/to stop code there
