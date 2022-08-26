@@ -61,15 +61,15 @@ print('''
 ''', ID)
 
 # 2 ka table without user input
-x = 2
-i = 1
+x = 2                         #table of --
+i = 1                         #initial value of i 
 while i <= 10:                #makes code stop at 10
     print(i*x)                #multiplies present value of i with x and then prints it 
     i += 1                    #adds 1 to previous value of i
 
 #any table with user input
-x = int(input('enter a number: '))
-i = 1
-while i <= 10:
-    print(i*x)
-    i += 1
+x = int(input('enter a number: '))     #takes integeral input from user
+i = 1                                  #initial value of i
+while i <= 10:               #makes code stop at 10
+    print(i*x)               #multiplies present value of i with x and then prints it
+    i += 1                   #adds 1 to previous value of i
