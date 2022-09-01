@@ -16,9 +16,9 @@ def table(my_input):                      #defining a function
         print('input is valid, processing........')
     else:
         print('error: invalid number')
-        exit()
+        
 
-m_input = input('enter a number: ')      #asking for user input
+m_input = int(input('enter a number: '))      #asking for user input
 
 table(m_input)                            #calling function
 
