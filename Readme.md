@@ -154,7 +154,36 @@ not in - Returns True if a value is not present inside the object
 name = 'Daksh'  
 if name == 'Daksh':  
 &nbsp; &nbsp; &nbsp;&nbsp; print('hello Daksh')  
-elif name == 'Sushil'  
+elif name == 'Sushil':  
 &nbsp;&nbsp;&nbsp;&nbsp; print('hello sir')  
 else:  
-&nbsp;&nbsp;&nbsp;&nbsp; print('hello, unknown user')
+&nbsp;&nbsp;&nbsp;&nbsp; print('hello, unknown user')  
+<br>
+-------------------------------ALSO-------------------------------
+<br/>  
+if name == 'Daksh':  
+&nbsp;&nbsp;&nbsp;&nbsp; pass  
+#pass will not pass the condition without giving an error when we don't want to input a function  
+#exit() stops the code right there and exits the code  
+## LOOPS
+### WHILE LOOPS
+parts of while loop
+1. initialize/starting point
+1. condition check hoti hai
+1. work karta hai jo karne ko bolte hai
+1. increment karta hai (i ka increment hota hai)
+
+keywords
+1. break - finds a number or string and stops the code there
+1. continue - finds a number or string and skips that value
+
+#### #NOTE
+else statement in while loop is always executed 
+ 
+example:  
+i = 1  
+while i <= 1000 :  
+&nbsp;&nbsp;&nbsp;&nbsp;print(' i = ', i)  
+&nbsp;&nbsp;&nbsp;&nbsp;i += 1  
+else:  
+&nbsp;&nbsp;&nbsp;&nbsp;print( ' yo ' )
