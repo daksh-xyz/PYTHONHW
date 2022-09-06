@@ -146,3 +146,15 @@ not in - Returns True if a value is not present inside the object
 1. ^ -> xor
 1. << -> fill left with zeroes
 1. '>>' -> fill right with zeroes
+
+## CONDITIONS
+1. There are three types of conditions: If, else and elif
+1. example:
+
+name = 'Daksh'  
+if name == 'Daksh':  
+&nbsp; &nbsp; &nbsp;&nbsp; print('hello Daksh')  
+elif name == 'Sushil'  
+&nbsp;&nbsp;&nbsp;&nbsp; print('hello sir')  
+else:  
+&nbsp;&nbsp;&nbsp;&nbsp; print('hello, unknown user')
