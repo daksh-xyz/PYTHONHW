@@ -165,20 +165,22 @@ if name == 'Daksh':
 &nbsp;&nbsp;&nbsp;&nbsp; pass  
 #pass will not pass the condition without giving an error when we don't want to input a function  
 #exit() stops the code right there and exits the code  
+
 ## LOOPS
 ### WHILE LOOPS
-parts of while loop
+#### PARTS OF WHILE LOOP
 1. initialize/starting point
 1. condition check hoti hai
 1. work karta hai jo karne ko bolte hai
 1. increment karta hai (i ka increment hota hai)
 
-keywords
+#### KEYWORDS:
+
 1. break - finds a number or string and stops the code there
 1. continue - finds a number or string and skips that value
 
 #### #NOTE
-else statement in while loop is always executed 
+else statement in any loop is always executed except when break keyword is used
  
 example:  
 i = 1  
@@ -187,3 +189,32 @@ while i <= 1000 :
 &nbsp;&nbsp;&nbsp;&nbsp;i += 1  
 else:  
 &nbsp;&nbsp;&nbsp;&nbsp;print( ' yo ' )
+
+### FOR LOOPS
+for loops syntax:  
+for this in that  
+#### PARTS OF FOR LOOPS:  
+1. initialize with i = 0 as index value of string/list/tuple
+1. syntax/condition check hoti hai with membership operator
+1. kaam karta hai jo karne ko bolte hai
+1. increment in i
+
+#### KEYWORDS: 
+1. break
+1. continue
+1. exit  
+they have the same function as in while loop
+1. range( ) function loops till the specified index number or int starts from 0 by default and increments by 1 by default
+1. else will be executed when loop has finished running
+1. pass statement allows to pass through a function without 
+
+## NESTED LOOPS
+It's a loop inside a loop  
+the inner loop will be executed every time an element from outer loop is executed  
+### for example: 
+adj = ["red", "big", "tasty"]  
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:  
+  &nbsp;&nbsp;for y in fruits:  
+  &nbsp;&nbsp;&nbsp;&nbsp;print( x, y ) 
