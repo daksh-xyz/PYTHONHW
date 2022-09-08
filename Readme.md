@@ -218,3 +218,5 @@ fruits = ["apple", "banana", "cherry"]
 for x in adj:  
   &nbsp;&nbsp;for y in fruits:  
   &nbsp;&nbsp;&nbsp;&nbsp;print( x, y ) 
+
+## FUNCTION
