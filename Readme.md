@@ -220,3 +220,44 @@ for x in adj:
   &nbsp;&nbsp;&nbsp;&nbsp;print( x, y ) 
 
 ## FUNCTION
+1. without argment without return
+1. without argument with return
+1. with argument without return
+1. with argument with return
+
+### WORKING WITH FUNCTIONS:
+1. def keyword use karte hai function ko define karne ke liye   
+1. function ke baad bracket lgate hai jisme arguments ya parameters pass karte hai  
+jitne arguments function ke andar define karte hue daalte hai utne hee call karte hue dalne hote hai usse zyada ya kam daloge toh error raise hota hai.
+1. function ke andar jo kaam karana hai wo likho
+1.  function ko call kardo
+
+### KEYWORDS:
+1. return - stores the output or a value in a function and does not print it unless asked to do so
+1. pass - performs exactly like before, does not raise error if you dont put anything in a function
+1. def - defines any function that user wants to create
+
+### ARGUMENTS
+1. arbitrary arguments:  
+syntax = myfunction( *arg )  
+we use ( * ) to make argument inside a function an arbitrary argument i.e. a tuple, the input inside a * wala fnuction is supposed to be a tuple or a list  
+Benefit: we can input infinite number of arguments while calling the function  
+
+1. keywords arguments:
+syntax = myfunction( **arg )  
+ kwargs store input value in key value pair as stored in a dictionary  
+
+### for example:  
+def my_function(**names):  
+  print("His last name is ", names["fname"], names["lname"])  
+my_function(fname = "Daksh", lname = "Lal")
+
+## LAMBDA FNUCTION
+The lambda function is a small anonymous function which can take any number of arguments, but can only have one expression.  
+lambda is only defined inside a variable  
+<br>
+SYNTAX:  
+lambda arguments : expression  
+multiplication( a , b ) :  
+&nbsp;&nbsp;&nbsp;&nbsp;multiply = lambda a , b : a * b  
+&nbsp;&nbsp;&nbsp;&nbsp;print ( multiply( a , b ) )
