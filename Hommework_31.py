@@ -1,62 +1,70 @@
 
+class iPhone_chahiye:
+    def mujhe_iPhone_chahiye():
+        user_input = input('what are you studying?: ')
+        if user_input == 'python':
+            print('iPhone 14 hee milega aapko')
+        elif user_input == 'data science':
+            print('iPhone 14 pro milega aapko')
+        elif user_input == 'ai':
+            print('iPhone 14 max milega aapko')
+        elif user_input == 'ml':
+            print('iPhone 14 pro max milega aapko')
+        else:
+            print('kuch na milega aapko niklo')
 
-def mujhe_iPhone_chahiye():
-    user_input = input('what are you studying?: ')
-    if user_input == 'python':
-        print('iPhone 14 hee milega aapko')
-    elif user_input == 'data science':
-        print('iPhone 14 pro milega aapko')
-    elif user_input == 'ai':
-        print('iPhone 14 max milega aapko')
-    elif user_input == 'ml':
-        print('iPhone 14 pro max milega aapko')
-    else:
-        print('kuch na milega aapko niklo')
-
-mujhe_iPhone_chahiye()
-
-
-def learn_scooty(age):
-    if age < 12:
-        print('can\'t learn scooty yet')
-    elif age > 12 and age < 26:
-        print('500 rupiya lagegi')
-    elif age > 26 and age < 50:
-        print('1000 rupiya lagega')
-    elif age >50 and age <100:
-        print('2500 rupiya lagega')
+calling = iPhone_chahiye
+calling.mujhe_iPhone_chahiye()
 
 user_age = int(input('what is your age: '))
-learn_scooty(user_age)
+class scooty_trainer_1():
+    def __init__(self, age):
+        self.age = age
+    def learn_scooty(self):
+        if self.age <= 12:
+            print('can\'t learn scooty yet')
+        elif self.age > 12 and self.age < 26:
+            print('500 rupiya lagega')
+        elif self.age > 26 and self.age < 50:
+            print('1000 rupiya lagega')
+        elif self.age >50 and self.age <100:
+            print('2500 rupiya lagega')
 
+callingTrainer = scooty_trainer_1
+callingTrainer(user_age).learn_scooty()
 
-def learn_scooty(age):
-    if age < 12:
-        print('can\'t learn scooty yet')
-    elif age > 12 and age < 26:
-        return 500
-    elif age > 26 and age < 50:
-        return 1000
-    elif age >50 and age <100:
-        return 2500
+myage = int(input('what is your age: '))
+class scootyTrainer2():
     
+    def __init__(self,age):
+        self.age = age
+    
+    def scooty(self):
+        if self.age <= 12:
+            print('can\'t learn scooty yet')
+        elif self.age > 12 and self.age < 26:
+            return 500
+        elif self.age > 26 and self.age < 50:
+            return 1000
+        elif self.age >50 and self.age <100:
+            return 2500
+    
+    # dictionary me error a rha haiaur ek function ke andar doosra function nahi call ho raha hai
+    mydict = {
+        'age': myage,
+        'money': scooty(myage)
+        }
+    # print('you are', mydict['age'],'years old and your total amount paid is ', mydict['money'])
 
-user_age = int(input('what is your age: '))
-mydict = {
-    'age': user_age,
-    'money': learn_scooty(user_age)
-    }
-print(mydict)
-
-def type_of_scooty(age, money):
-    if user_age > 12 and user_age < 26 and learn_scooty(user_age) == 500:
-        print('u get a smol scooty')
-    elif user_age > 26 and user_age <50 and learn_scooty(user_age) == 1000:
-        print('u get a medium scooty')
-    elif user_age > 50 and user_age < 100 and learn_scooty(user_age) == 2500:
-        print('u get a supported scooty') 
-
-type_of_scooty('age', 'money')
+    def type_of_scooty(self):
+        if self.age > 12 and self.age < 26: #and scooty() == 500:
+            print('u get a smol scooty')
+        elif self.age > 26 and self.age <50: #and scooty() == 1000:
+            print('u get a medium scooty')
+        elif self.age > 50 and self.age < 100: #and scooty() == 2500:
+            print('u get a supported scooty') 
+callingTrainer2 = scootyTrainer2
+callingTrainer2(myage).type_of_scooty()
 
 
 # burger function banaya hai 4 args ke saath without return args toppings judge karengi user input ke saath
