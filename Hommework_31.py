@@ -16,7 +16,7 @@ class iPhone_chahiye:
 calling = iPhone_chahiye
 calling.mujhe_iPhone_chahiye()
 
-user_age = int(input('what is your age: '))
+age = int(input('what is your age: '))
 class scooty_trainer_1():
     def __init__(self, age):
         self.age = age
@@ -31,10 +31,10 @@ class scooty_trainer_1():
             print('2500 rupiya lagega')
 
 callingTrainer = scooty_trainer_1
-callingTrainer(user_age).learn_scooty()
+callingTrainer(age).learn_scooty()
 
 myage = int(input('what is your age: '))
-class scootyTrainer2():
+class ScootyTrainer2():
     
     def __init__(self,age):
         self.age = age
@@ -50,21 +50,21 @@ class scootyTrainer2():
             return 2500
     
     # dictionary me error a rha haiaur ek function ke andar doosra function nahi call ho raha hai
-    mydict = {
-        'age': myage,
-        'money': scooty(myage)
-        }
+    # mydict = {
+    #     'age': myage,
+    #     'money': scooty(myage)
+    #     }
     # print('you are', mydict['age'],'years old and your total amount paid is ', mydict['money'])
-
+    
     def type_of_scooty(self):
-        if self.age > 12 and self.age < 26: #and scooty() == 500:
+        if self.age > 12 and self.age < 26 and self.scooty() == 500:
             print('u get a smol scooty')
-        elif self.age > 26 and self.age <50: #and scooty() == 1000:
+        elif self.age > 26 and self.age <50 and self.scooty() == 1000:
             print('u get a medium scooty')
-        elif self.age > 50 and self.age < 100: #and scooty() == 2500:
+        elif self.age > 50 and self.age < 100 and self.scooty() == 2500:
             print('u get a supported scooty') 
-callingTrainer2 = scootyTrainer2
-callingTrainer2(myage).type_of_scooty()
+callingTrainer2 = ScootyTrainer2(myage)
+callingTrainer2.type_of_scooty()
 
 
 # burger function banaya hai 4 args ke saath without return args toppings judge karengi user input ke saath
@@ -161,13 +161,15 @@ def status():
         return 'topped the class'
     elif user_input > '75':
         return 'passed the test'
+    elif user_input > '100':
+        return 'entered invalid marks'
     else:
         return 'failed the test'
 status()
 
 user_name = input('\nenter your name: ')
 x = f'''
-Dear,{user_name}, you have {status()}
+Dear {user_name}, you have {status()}
 '''
 print(x)
 
