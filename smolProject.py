@@ -1,6 +1,9 @@
 # def sum_function():
 #     result = 'I\'m good'
 #     return result
+fileName = input('enter fileName loser: ') 
+if 'daksh' in fileName:
+    print('loser')
 
 def show_message():
     message = 'type "hi" or "hello" in the input'
