@@ -58,7 +58,7 @@ class FileManagement():
                 print('\n', fileName, 'does not exist.')
                 self.delete_file()
         except:
-            print('error came up')
+            print('error came up in delete file')
 
 
     def wdyWanttoDo(self):
@@ -135,16 +135,3 @@ class DataLibrary(FileManagement):
             
 fileOBJ = FileManagement()
 fileOBJ.wdyWanttoDo()
-# Dataobj = DataLibrary()
-# Dataobj.dataInfo()
-
-# Project:
-# 1. Show to option to user 
-#     1. Creat a file 
-#         - call parent class metod to create a file using try except 
-#     2. delete a file 
-#         - call paret class method to delete file using try except 
-#     3. Insert data 
-#         - first get the file name by user in which he wants to insert data 
-#         - then get data via user and insert it into provided file 
-    # 4. Exit
