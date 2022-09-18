@@ -37,3 +37,6 @@ def hello(a, b):
     print('\nMultiply: ', check(a,b))
 
 hello(10,20)
+
+
+int(input('hi: '))
