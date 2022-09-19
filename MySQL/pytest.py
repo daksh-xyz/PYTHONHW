@@ -1,5 +1,7 @@
 import mysql.connector as mcon
 from beautifultable import BeautifulTable
+
+#connection to mysql database
 db = mcon.connect(
     host = "localhost",
     user = "root",
@@ -29,24 +31,15 @@ crud = db.cursor()
 def updatem():    
     #       MY CODE WHICH WAS ADEQUATE BTW                                                                  #function that updates mysql when userinput is 2 
     # field1 = input('\nEnter the field you want to change: ')                        #if elses are used so that if user doesnt input anything returns to main menu instead of giving error
-    # if field1 == '':                                                                #else will make the code proceed, if user inputs anything the code will proceed
-    #     crudsystem()
+    # value1 = input('\nEnter the correct value you want to change to: ')
+    # field2 = input('\nEnter unique field where incorrect value is there: ')
+    # value2 = input('\nEnter incorrect value: ')
+    # if field1 or value1 or field2 or value2 = '':
+        # crudsystem()
     # else:
-    #     value1 = input('\nEnter the correct value you want to change to: ')
-    # if value1 == '':
-    #     crudsystem()
-    # else:
-    #     field2 = input('\nEnter unique field where incorrect value is there: ')
-    # if field2 == '':
-    #     crudsystem()
-    # else:
-    #     value2 = input('\nEnter incorrect value: ')
-    # if value2 == '':
-    #     crudsystem
-    # else:
-    #     query = """UPDATE monthly_expenses SET {} = {} WHERE {} = {}""".format(field1, value1 , field2, value2)
-    #     crud.execute(query)
-    #     db.commit()
+        # query = """UPDATE monthly_expenses SET {} = {} WHERE {} = {}""".format(field1, value1 , field2, value2)
+        # crud.execute(query)
+        # db.commit()
     print('''
         --------------------------------------
                 SQL MANAGEMENT SYSTEM
@@ -56,30 +49,31 @@ def updatem():
         2. THING
         3. PRICE
         4. EXIT
-    ''')
+    ''')                                                            #prints a message when user choses to update data gives option to update data in name, thing or price
     
-    try:
-        user_choice = input('\nWhat do you want to UPDATE: ')
+    try:                                                            # try method used to prevent raising valueerror and instead show custom message
+        user_choice = int(input('\nWhat do you want to UPDATE: '))
     except ValueError:
-        print('\nEnter integer value only')
+        print('\nEnter integer value only!')
+        updatem()
     
-    change = input('\nEnter ID number: ')
-    if user_choice == '1':
-        updatedName = input('\nEnter New Name: \n')
-        query = f"UPDATE monthly_expenses SET NAME = '{updatedName}' WHERE ID = {change} "
-    elif user_choice == '2':
+    change = input('\nEnter ID number: ')                           #since ID is unique, and everything uses ID, I used it as a global var
+    if user_choice == 1:
+        updatedName = input('\nEnter New Name: \n')                 #asks user to enter updated/correct name
+        query = f"UPDATE monthly_expenses SET NAME = '{updatedName}' WHERE ID = {change} "      #query uses global var and local var updatedName
+    elif user_choice == 2:
         updatedThing = input('\nEnter New Thing: \n')
         query = f"UPDATE monthly_expenses SET THINGs = '{updatedThing}' WHERE ID = {change}"
-    elif user_choice == '3':
+    elif user_choice == 3:
         updatedPrice = input('\nEnter New Price: \n')
         query = f"UPDATE monthly_expenses SET PRICE = {updatedPrice} WHERE ID = {change}"
-    elif user_choice == '4':
-        print('EXITING PROGRAM...')
+    elif user_choice == 4:
+        print('EXITING PROGRAM...')                             #terminates the loop
     else:
         print('Invalid Input!')
         crudsystem()
-    crud.execute(query)
-    db.commit()
+    crud.execute(query)                                         #executes the final query which comes out of above conditions
+    db.commit()                                                 #commits the updated data to mySQL
 
 def deletem():                                                                  # function that deletes row on userinput 3 same logic as above
     change = input('\nEnter ID number: ')
@@ -96,29 +90,31 @@ def insertm():
     things = input('\nItem bought: ')
     try: 
         price = int(input('\nCost: '))
-    except ValueError:
-        print('please enter integer values only') 
+    except ValueError:                                          #used to prevent raising an error if input is not castable
+        print('Enter integer values only!') 
     query = "INSERT INTO monthly_expenses (NAME, THINGS, PRICE) VALUES (%s, %s, %s)".format(name, things, price)
     val = (name, things, price)
     crud.execute(query, val)
     db.commit()
 
 def readm():
+    # selects all data from monthlyexpenses table and stores it
     crud.execute("SELECT * FROM monthly_expenses")
-    # For fetching all data form db table use fetchall() method
+    # For fetching all data form db table use fetchall() method fetches data in a list in which entries are in tuples
     all_data = crud.fetchall()
+    #creating object of imported class
     bt = BeautifulTable()
-    # Check lenght of rows
+    #using a method from imported class to create headers for the table
     bt.column_headers = ['Sr.No','ID','NAME','THING','PRICE','DATE']
-    i=1
-    for row in all_data:
-        add_no = list(row)
-        add_no.insert(0, i)
-        bt.append_row(add_no)
-        i+=1
-    print(bt)
+    i=1                        #initializing
+    for row in all_data:                #creating a for loop
+        add_no = list(row)                #type casting row into a list from tuple
+        add_no.insert(0, i)                   # inserting data in sr.no through 'i'
+        bt.append_row(add_no)               #appending data in table
+        i+=1                        #increment
+    print(bt)           #printing bt object outside loop
 
-
+#STARTING POINT TO PROVIDE USER WITH OPTIONS 
 def crudsystem():
     print('''
         --------------------------------------
@@ -129,9 +125,11 @@ def crudsystem():
         2. Update a value in table
         3. Delete a row from table
         4. Read current table
-        5. Exit                               v0.1
+        5. Exit                               v3.1
         ''')
-    user_input = input('What do you want to do: ')
+    user_input = input('What do you want to do: ')                      #asking user for input
+    # wherever readm is called it is used to show user before and after results of the operation,
+    # also after finishing each operation manual loops are created to reach back here
     if user_input == '1':
         print('INSERTING IN TABLE monthly_expenses')
         insertm()
@@ -153,8 +151,7 @@ def crudsystem():
         print('\nREADING FROM monthly_expenses')
         readm()
         crudsystem()
-
-    elif user_input == '5':
+    elif user_input == '5':                         #terminates loop
         print('\nEXITING PROGRAM....\n')
     else:
         print('INVALID INPUT, TRY AGAIN!')
@@ -162,10 +159,3 @@ def crudsystem():
 
 
 crudsystem()
-
-# def IDs():
-#     crud.execute("SELECT ID FROM monthly_expenses")
-#     x = crud.fetchall()
-#     for d in x:
-#         print(d,)
-# IDs()
