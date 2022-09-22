@@ -48,12 +48,12 @@ class FileManagement():
                     os.remove(fileName)
                     print('\n', fileName,'is successfully deleted.')
                     self.wdyWanttoDo()
-            elif '.txt' not in fileName:
-                print('\nonly .txt files are currently allowed')
-                self.delete_file()
-            elif fileName == '0':
+            elif fileName == '0' and '.txt' not in fileName:
                 print('\noperation cancelled')
                 self.wdyWanttoDo()
+            elif '.txt' not in fileName :
+                print('\nonly .txt files are currently allowed')
+                self.delete_file()
             else:
                 print('\n', fileName, 'does not exist.')
                 self.delete_file()
