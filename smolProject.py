@@ -43,6 +43,7 @@
 # print(numpy)
 
 import numpy as np
+from random import choice
 a = int(input('rows: '))
 b = int(input('columns: '))
 arr = ['1','2','3','4','5','6','7','8']
@@ -53,7 +54,8 @@ print(len(arr))
 if len(arr) < c:
     k = len(arr)
     while k != c:
-        y = arr.append('#')
+        x = choice(['/', '|', '#'])
+        y = arr.append(x)
         k += 1
 
 z = np.array(arr).reshape(a,b)
