@@ -1,6 +1,4 @@
-
 from random import randint, choice
-from tkinter import W
 import numpy as np
 
 a = []
@@ -13,7 +11,7 @@ while i <11:
     a.append(y)
     i += 1
 
-
+print(a)
 
 M = [['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#'],['#','#','#','#','#','#','#','#','#','#']]
 
@@ -36,25 +34,27 @@ for s in x:
     for f in s:
         print(f, end=' ')
     print()
+def balloonburst():
+    d = int(input('yo: '))
+    d = 9 - d
+    # print(d)
+    # print(a)
+    k = 0
+    while k < 10:
+        if d == a[k]:
+            print('balloon popped')
+            while t[k] < 10:
+                M[t[k]][b[k]] = ' '
+                t[k] = t[k] + 1
+            d += 1
+        k += 1
+        
 
-d = int(input('yo: '))
-d = 9 - d
-# print(d)
-# print(a)
-k = 0
-while k < 10:
-    if d == a[k]:
-        print('balloon popped')
-        M[a[k]][b[k]] = ' '
-        while t[k] < 10:
-            M[t[k]][b[k]] = ' '
-            t[k] = t[k] + 1
-        d += 1
-    k += 1
+    x = np.array(M)
 
-x = np.array(M)
-
-for h in x:
-    for g in h:
-        print(g, end = ' ')
-    print()
+    for h in x:
+        for g in h:
+            print(g, end = ' ')
+        print()
+    balloonburst()
+balloonburst()   
