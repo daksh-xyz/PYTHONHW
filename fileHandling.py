@@ -89,7 +89,7 @@ class FileManagement():
             DataLibrary.dataInfo(self)
         elif userInput == '5':
             print('\n program quit successfully')
-            DataLibrary.dataInfo(self)
+            # DataLibrary.dataInfo(self)
         else:
             print('\ninvalid input')
             self.wdyWanttoDo()
@@ -126,8 +126,6 @@ class DataLibrary(FileManagement):
                 print(f,r.read())
                 r.close()
                 self.wdyWanttoDo()
-            elif userInput == '5':
-                exit()
         except FileNotFoundError:
             print('no such file was found, try again')
             self.wdyWanttoDo()
