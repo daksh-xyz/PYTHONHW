@@ -6,7 +6,7 @@ i = 0
 j = 0
 try:
     while x != y:
-        # sleep(0.05)
+        sleep(0.05)
         if x[i] != alpha[j]:
             y[i] = alpha[j]
             z = ''.join(y)
